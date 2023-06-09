@@ -4,6 +4,7 @@ router.get('/products',product.getProducts);
 router.get('/product/:id',product.getProduct);
 router.put('/product/:id',product.updateProduct);
 router.delete('/product/:id',product.deleteProduct);
+router.use('/dashboard',require('./dashboard'));
 router.use('/profile',require('./profile'));
 router.use('/signup',require('./signup'))
 router.use('/login',require('./login'))

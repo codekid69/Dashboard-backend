@@ -58,6 +58,16 @@ module.exports.search=async function(req,res){
     return res.status(200).send(result);
 }
 
+module.exports.dashboard=async function(req,res){
+    let result=await Product.find({
+        "$or":[
+            {userId:{$regex:req.params.id}},
+        ]
+    })
+    return res.status(200).send(result);
+}
+
+
 module.exports.deleteProduct=async function(req,res){
     // console.log(req.params.id);
    const result=await Product.findByIdAndDelete(req.params.id);
