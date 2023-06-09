@@ -60,7 +60,7 @@ module.exports.search=async function(req,res){
 
 module.exports.deleteProduct=async function(req,res){
     // console.log(req.params.id);
-   const result=await Product.deleteOne({_id:req.params.key});
+   const result=await Product.findByIdAndDelete(req.params.id);
    return res.send(result)
 }
 
